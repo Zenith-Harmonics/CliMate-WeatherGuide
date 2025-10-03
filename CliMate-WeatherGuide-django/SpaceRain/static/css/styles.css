@@ -1,0 +1,13 @@
+h1{
+    color:rgb(246, 35, 35);
+}
+
+.test{
+    color:rgb(246, 35, 35);
+}
+
+#mapid { 
+    height: 1000px; 
+    width: 1000px;
+    margin: auto;
+}
