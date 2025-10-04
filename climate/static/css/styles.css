@@ -1,0 +1,85 @@
+/* Brand */
+h1, .test { color: rgb(246, 35, 35); }
+
+/* --- 2-column layout: map left, controls right --- */
+.container{
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) 360px;
+  gap: 1rem;
+  align-items: start;
+}
+
+/* Title spans both columns */
+.container > h1{
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+/* Map (left) */
+#mapid{
+  grid-column: 1;
+  height: 400px;
+  width: 100%;
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Controls column (right) */
+.controls{
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+/* Labels/inputs/button niceties */
+.form-label{ margin-bottom: .25rem; }
+.controls .btn{
+  align-self: flex-start;
+  padding: .55rem .9rem;
+  border-radius: .5rem;
+}
+
+/* Responsive: stack */
+@media (max-width: 768px){
+  .container{ grid-template-columns: 1fr; }
+  #mapid, .controls{ grid-column: 1; }
+}
+
+/* --- Datepicker dark styling (field only) --- */
+.controls input[type="date"]{
+  appearance: none; -webkit-appearance: none;
+  background-color: #2b3035; color: #e9ecef;
+  border: 1px solid #495057; border-radius: .5rem;
+  padding: .55rem .75rem; line-height: 1.25;
+  transition: border-color .15s, box-shadow .15s, background-color .15s;
+  color-scheme: dark;       /* dark popup in Firefox; hint in Chromium */
+  accent-color: #0d6efd;
+}
+.controls input[type="date"]::placeholder{ color: #adb5bd; opacity: .75; }
+.controls input[type="date"]:focus{
+  outline: none; border-color: #86b7fe;
+  box-shadow: 0 0 0 .2rem rgba(13,110,253,.25);
+  background-color: #23272b;
+}
+.controls input[type="date"]::-webkit-calendar-picker-indicator{
+  filter: invert(1) opacity(.85); cursor: pointer;
+}
+.controls input[type="date"]::-webkit-inner-spin-button{ display: none; }
+
+/* Firefox: ensure dark internals */
+@-moz-document url-prefix() {
+  .controls input[type="date"]{
+    color-scheme: dark; background-color: #2b3035; color: #e9ecef;
+  }
+  .controls input[type="date"]::-moz-focus-inner { border: 0; }
+  .controls input[type="date"]::-moz-datetime-input,
+  .controls input[type="date"]::-moz-datetime-edit,
+  .controls input[type="date"]::-moz-datetime-edit-fields-wrapper,
+  .controls input[type="date"]::-moz-datetime-edit-year-field,
+  .controls input[type="date"]::-moz-datetime-edit-month-field,
+  .controls input[type="date"]::-moz-datetime-edit-day-field {
+    color-scheme: dark; background: transparent; color: #e9ecef;
+  }
+}
