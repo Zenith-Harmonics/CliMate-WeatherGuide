@@ -1,8 +1,17 @@
 {% extends 'mainapp/base.html' %}
 
 {% block content %}
-    <h1>Welcome to Space Challenge</h1>
-    
-    <div id='mapid'></div>
-{% endblock %}
+  <h1>Welcome to Space Challenge</h1>
 
+ <div id="mapid"></div>
+
+<div class="controls">
+  <input id="mission-date" type="date" class="form-control" />
+  <label for="lat" class="form-label">Latitude</label>
+  <input id="lat" type="number" class="form-control" />
+  <label for="lng" class="form-label">Longitude</label>
+  <input id="lng" type="number" class="form-control" />
+  <button type="button" class="btn btn-secondary">Submit</button>
+</div>
+
+{% endblock %}
