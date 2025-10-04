@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	attribution: '<a href="https://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank">&copy; <b>Jawg</b>Maps</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 	minZoom: 0,
 	maxZoom: 22,
-	accessToken: '<your accessToken>'
+	accessToken: '5SbJYIvyrKNfQ7WsBgES4QMGjneZYUMXUUd0CucB2Ain0RtkfHMBgkGVrHQtSJOY'
 })
         ]
     });
