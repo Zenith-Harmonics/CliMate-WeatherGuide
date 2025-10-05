@@ -1,5 +1,7 @@
 /climate/services/.idea
 /climate/services/merra2datasets
 /climate/.idea
+**/__pycache__/
+
 
 .venv
