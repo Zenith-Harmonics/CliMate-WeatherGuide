@@ -5,3 +5,5 @@
 
 
 .venv
+merra2datasets/
+merra2.npy
